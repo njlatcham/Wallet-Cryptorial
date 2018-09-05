@@ -37,7 +37,7 @@ class CreateMnemonic extends Component {
             offer a 128-bit security level.
           </p>
           <button
-            className="buttonBackwards"
+            className="btn btn-primary btn-lg buttonBackwards"
             onClick={this.props.pageBackwards}
           >
             <i className="fas fa-arrow-left" />
@@ -57,7 +57,10 @@ class CreateMnemonic extends Component {
             When you create a real wallet, you will have to re-enter this phrase
             to confirm that you've written it down and stored it properly.
           </p>
-          <button className="buttonForwards" onClick={this.props.pageForwards}>
+          <button
+            className="btn btn-primary btn-lg buttonForwards"
+            onClick={this.props.pageForwards}
+          >
             Next
             <i className="fas fa-arrow-right" />
           </button>

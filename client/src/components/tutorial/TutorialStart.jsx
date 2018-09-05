@@ -7,38 +7,17 @@ class Homepage extends Component {
         <div className="contents">
           <h2 className="contents_title">Table of Contents</h2>
           <ul className="contents_list">
+            <li className="list-items">Chapter 1:The Cryptorial</li>
+            <li className="list-items">Chapter 2: Mnemonic Phrase</li>
+            <li className="list-items">Chapter 3: Private Key</li>
+            <li className="list-items">Chapter 4: Public Key</li>
+            <li className="list-items">Chapter 5: Coin Information</li>
+            <li className="list-items">Chapter 6: Sample Buying Transaction</li>
             <li className="list-items">
-              <span className="chapter">Chapter 1:</span> The Cryptorial
+              Chapter 7: Sample Selling Transaction
             </li>
-            <li>
-              <span className="chapter">Chapter 2:</span> Register
-            </li>
-            <li>
-              <span className="chapter">Chapter 3:</span> Mnemonic Phrase
-            </li>
-            <li>
-              <span className="chapter">Chapter 4:</span> Private Key
-            </li>
-            <li>
-              <span className="chapter">Chapter 5:</span> Public Key
-            </li>
-            <li>
-              <span className="chapter">Chapter 6:</span> Coin Information
-            </li>
-            <li>
-              <span className="chapter">Chapter 7:</span> Sample Buying
-              Transaction
-            </li>
-            <li>
-              <span className="chapter">Chapter 8:</span> Sample Selling
-              Transaction
-            </li>
-            <li>
-              <span className="chapter">Chapter 9:</span> Explore the Blockchain
-            </li>
-            <li>
-              <span className="chapter">Chapter 10:</span> Complete Tutorial
-            </li>
+            <li className="list-items">Chapter 8: Explore the Blockchain</li>
+            <li className="list-items">Chapter 9: Complete Tutorial</li>
           </ul>
         </div>
 

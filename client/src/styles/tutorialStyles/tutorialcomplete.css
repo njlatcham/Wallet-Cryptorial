@@ -23,6 +23,10 @@
   width: 80%;
 }
 
+.buttonLink {
+  color: white;
+}
+
 .fa-redo-alt {
   padding-right: 10px;
 }

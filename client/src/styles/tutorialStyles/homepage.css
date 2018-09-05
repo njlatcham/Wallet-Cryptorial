@@ -7,6 +7,7 @@
 .contents {
   background-color: white;
   height: 50vh;
+  margin-top: 30px;
   width: 35%;
 }
 
@@ -20,15 +21,10 @@
   list-style: none;
 }
 
-/*li {
+.list-items {
   font-family: "Barlow", sans-serif;
   font-size: 2rem;
   padding: 10.5px 0;
-}*/
-
-.chapter {
-  font-family: "Adamina", serif;
-  font-size: 2rem;
 }
 
 .noDescription {

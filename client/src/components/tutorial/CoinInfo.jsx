@@ -71,7 +71,7 @@ class CoinInfo extends Component {
             reached $17,900 USD in December of 2017.
           </p>
           <button
-            className="buttonBackwards"
+            className="buttonBackwards btn btn-primary btn-lg"
             onClick={this.props.pageBackwards}
           >
             <i className="fas fa-arrow-left" />
@@ -111,7 +111,10 @@ class CoinInfo extends Component {
               </div>
             </div>
           </div>
-          <button className="buttonForwards" onClick={this.props.pageForwards}>
+          <button
+            className="buttonForwards btn btn-primary btn-lg"
+            onClick={this.props.pageForwards}
+          >
             Next
             <i className="fas fa-arrow-right" />
           </button>

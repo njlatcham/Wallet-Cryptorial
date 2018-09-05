@@ -86,7 +86,7 @@ class SampleBuy extends Component {
             and then send you Bitcoin just a few hours later.
           </p>
           <button
-            className="buttonBackwards"
+            className="buttonBackwards btn btn-primary btn-lg"
             onClick={this.props.pageBackwards}
           >
             <i className="fas fa-arrow-left" />
@@ -143,13 +143,12 @@ class SampleBuy extends Component {
                 defaultValue={this.props.public}
               />
             </div>
-            {/*<div className="line" />*/}
             <div className="buy_comp-BTC center">
               Please ensure that the Amount in USD is less than your Test
               Balance.
             </div>
             <button
-              className="buttonForwards"
+              className="buttonForwards btn btn-primary btn-lg"
               type="submit"
               onClick={this.props.pageForwards}
             >

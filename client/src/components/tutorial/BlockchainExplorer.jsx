@@ -28,7 +28,7 @@ class BlockchainExplorer extends Component {
             each one.
           </p>
           <button
-            className="buttonBackwards"
+            className="buttonBackwards btn btn-primary btn-lg"
             onClick={this.props.pageBackwards}
           >
             <i className="fas fa-arrow-left" />
@@ -59,7 +59,10 @@ class BlockchainExplorer extends Component {
               <p>Recieving Address</p>
             </div>
           </div>
-          <button className="buttonForwards" onClick={this.props.pageForwards}>
+          <button
+            className="buttonForwards btn btn-primary btn-lg"
+            onClick={this.props.pageForwards}
+          >
             Next
             <i className="fas fa-arrow-right" />
           </button>

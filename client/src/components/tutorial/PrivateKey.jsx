@@ -30,7 +30,7 @@ class PrivateKey extends Component {
             produce for 32 years.
           </p>
           <button
-            className="buttonBackwards"
+            className="buttonBackwards btn btn-primary btn-lg"
             onClick={this.props.pageBackwards}
           >
             <i className="fas fa-arrow-left" />
@@ -50,7 +50,10 @@ class PrivateKey extends Component {
             Everytime you purchase any CryptoCurrency, you will be required to
             re-enter this key.
           </p>
-          <button className="buttonForwards" onClick={this.props.pageForwards}>
+          <button
+            className="buttonForwards btn btn-primary btn-lg"
+            onClick={this.props.pageForwards}
+          >
             Next
             <i className="fas fa-arrow-right" />
           </button>

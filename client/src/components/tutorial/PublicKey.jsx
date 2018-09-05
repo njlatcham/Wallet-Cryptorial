@@ -30,7 +30,7 @@ class PublicKey extends Component {
             your private address, or you will most likely lose all your assets.
           </p>
           <button
-            className="buttonBackwards"
+            className="buttonBackwards btn btn-primary btn-lg"
             onClick={this.props.pageBackwards}
           >
             <i className="fas fa-arrow-left" />
@@ -49,7 +49,10 @@ class PublicKey extends Component {
           <p className="public_comp-desc">
             This key is used as the address where coins will be
           </p>
-          <button className="buttonForwards" onClick={this.props.pageForwards}>
+          <button
+            className="buttonForwards btn btn-primary btn-lg"
+            onClick={this.props.pageForwards}
+          >
             Next
             <i className="fas fa-arrow-right" />
           </button>

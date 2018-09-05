@@ -8,11 +8,30 @@ class Navigation extends Component {
     this.state = {};
   }
   logout = ev => {
-    console.log('Hello');
     localStorage.clear();
   };
 
   render() {
+    let loginButton;
+    if (localStorage.userid) {
+      loginButton = (
+        <NavItem
+          className="header-nav"
+          onClick={this.logout}
+          eventKey={2}
+          href="/"
+        >
+          Logout
+        </NavItem>
+      );
+    } else {
+      loginButton = (
+        <NavItem className="header-nav" eventKey={2} href="/login">
+          Login
+        </NavItem>
+      );
+    }
+
     return (
       <Navbar staticTop collapseOnSelect className="a">
         <Navbar.Collapse>
@@ -35,14 +54,7 @@ class Navigation extends Component {
             <NavItem className="header-nav" eventKey={1} href="/tutorial">
               Tutorial
             </NavItem>
-            <NavItem
-              className="header-nav"
-              onClick={this.logout}
-              eventKey={2}
-              href="/"
-            >
-              Logout
-            </NavItem>
+            {loginButton}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

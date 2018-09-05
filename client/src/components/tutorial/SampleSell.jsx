@@ -79,7 +79,7 @@ class SampleSell extends Component {
             public address is the correct one.
           </p>
           <button
-            className="buttonBackwards"
+            className="buttonBackwards btn btn-primary btn-lg"
             onClick={this.props.pageBackwards}
           >
             <i className="fas fa-arrow-left" />
@@ -144,7 +144,7 @@ class SampleSell extends Component {
               Balance.
             </div>
             <button
-              className="buttonForwards"
+              className="buttonForwards btn btn-primary btn-lg"
               type="submit"
               onClick={this.props.pageForwards}
             >

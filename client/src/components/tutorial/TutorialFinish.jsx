@@ -23,12 +23,20 @@ class TutorialCompletion extends Component {
             through it again, or complete the tutorial, and move on to creating
             a real cryptocurrency wallet.
           </p>
-          <button className="buttonBackwards" onClick={this.props.pageReset}>
+          <button
+            className="buttonBackwards btn btn-primary btn-lg"
+            onClick={this.props.pageReset}
+          >
             <i className="fas fa-redo-alt" />
             Restart Tutorial
           </button>
-          <button className="buttonForwards" onClick={this.handleCompletion}>
-            <Link to={"/wallets"}>Complete Tutorial</Link>
+          <button
+            className="buttonForwards btn btn-primary btn-lg"
+            onClick={this.handleCompletion}
+          >
+            <Link className="buttonLink" to={"/wallets"}>
+              Complete Tutorial
+            </Link>
             <i className="fas fa-home" />
           </button>
         </div>

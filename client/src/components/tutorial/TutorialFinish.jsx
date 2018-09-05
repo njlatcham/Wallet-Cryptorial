@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Resource from "../../models/resource.js";
-const User = Resource("users");
+import { Link } from "react-router-dom";
 
 class TutorialCompletion extends Component {
   constructor(props) {
@@ -9,14 +8,6 @@ class TutorialCompletion extends Component {
       tutorialcomplete: true
     };
   }
-  // Send info to User table to update tutorialComplete---------
-  handleCompletion = ev => {
-    ev.preventDefault();
-    console.log(localStorage.userid);
-    User.update(localStorage.userid, this.state)
-      .then(() => this.props.history.push("/"))
-      .catch(e => alert(e));
-  };
 
   render() {
     return (
@@ -37,7 +28,7 @@ class TutorialCompletion extends Component {
             Restart Tutorial
           </button>
           <button className="buttonForwards" onClick={this.handleCompletion}>
-            Complete Tutorial
+            <Link to={"/wallets"}>Complete Tutorial</Link>
             <i className="fas fa-home" />
           </button>
         </div>

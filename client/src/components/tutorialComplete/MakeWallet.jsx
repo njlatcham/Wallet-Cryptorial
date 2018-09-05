@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Form, Col, PageHeader, Button } from 'react-bootstrap';
-import Resource from '../../models/resource.js';
-const Key = Resource('keys');
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import { Form, Col, PageHeader, Button } from "react-bootstrap";
+import Resource from "../../models/resource.js";
+const Key = Resource("keys");
 
 class MakeWallet extends Component {
   constructor(props) {
@@ -19,16 +19,19 @@ class MakeWallet extends Component {
     ev.preventDefault();
     const data = {
       publicKey: this.state.publicKey,
-      userId: localStorage.getItem('userid')
+      userId: localStorage.getItem("userid")
     };
     console.log(data);
 
     Key.create(data)
-      .then(() => alert('success'))
+      .then(() => this.props.history.push("/wallets"))
       .catch(e => alert(e));
   };
+
   _addNewWallet() {}
+
   componentDidMount() {}
+
   render() {
     return (
       <div className="make-wallet">

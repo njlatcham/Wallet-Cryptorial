@@ -10,7 +10,6 @@ import App from "./App.jsx";
 import registerServiceWorker from "./registerServiceWorker";
 // Import Stylesheets
 
-import "./styles/index.css";
 import "./styles/App.css";
 import "./styles/Tutorial.css";
 import "./styles/register.css";

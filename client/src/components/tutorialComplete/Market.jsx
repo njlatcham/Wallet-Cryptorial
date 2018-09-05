@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Table, Button } from "react-bootstrap";
+import { Table, Button, Grid } from "react-bootstrap";
 import prices from "../../helpers/market.js";
 import BuyBitcoin from "./market/buyBitcoin";
 
@@ -88,7 +88,7 @@ class Market extends Component {
 
   render() {
     return (
-      <section>
+      <Grid>
         <h1 className="market_title">Coin Market</h1>
         <div className="market_line" />
         <Table className="market_table" striped bordered condensed hover>
@@ -154,7 +154,7 @@ class Market extends Component {
             </tr>
           </tbody>
         </Table>
-      </section>
+      </Grid>
     );
   }
 }

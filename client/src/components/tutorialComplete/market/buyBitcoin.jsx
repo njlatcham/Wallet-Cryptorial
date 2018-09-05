@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   Modal,
   FormControl,
   FormGroup,
   ControlLabel,
   Button
-} from 'react-bootstrap';
+} from "react-bootstrap";
 // import isValid from '../../../helpers/isValid';
-import Buy from '../../../helpers/buy';
-import Resource from '../../../models/resource';
-const Key = Resource('keys');
+import Buy from "../../../helpers/buy";
+import Resource from "../../../models/resource";
+const Key = Resource("keys");
 
 class BuyBitcoinModal extends Component {
   constructor(props) {
@@ -18,13 +18,13 @@ class BuyBitcoinModal extends Component {
     this.state = {
       show: false,
       dollars: 0,
-      receipt: '',
+      receipt: "",
       publicKeys: []
     };
   }
   // GET PUBLIC ADRESSES FROM DB
   getWallets = () => {
-    Key.find(localStorage.getItem('userid'))
+    Key.find(localStorage.getItem("userid"))
       .then(result => {
         this.setState({
           publicKeys: result.result
@@ -67,6 +67,7 @@ class BuyBitcoinModal extends Component {
           <Modal.Header closeButton>
             <Modal.Title>Buy Bitcoin from Coinbase</Modal.Title>
           </Modal.Header>
+
           <Modal.Body>
             <form>
               <FormGroup>
@@ -86,10 +87,11 @@ class BuyBitcoinModal extends Component {
               </FormGroup>
             </form>
           </Modal.Body>
+
           <Modal.Footer>
             <Button
               type="submit"
-              onClick={Buy('127jKPU1kuYpnLyhzPjNPmPP9kyMeeEWyA', 10).then(
+              onClick={Buy("127jKPU1kuYpnLyhzPjNPmPP9kyMeeEWyA", 10).then(
                 result => console.log(result)
               )}
             >

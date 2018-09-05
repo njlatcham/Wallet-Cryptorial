@@ -1,18 +1,18 @@
-import React, { Component } from 'react';
-import BitBalance from '../../../helpers/balance';
+import React, { Component } from "react";
+import BitBalance from "../../../helpers/balance";
 
 class Wallet extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      name: 'Bitcoin',
-      description: 'My Wallet',
-      publickey: '3KBKa6uJfFVAJnQ61B4EQDdE6Jscx326yF', //3KBKa6uJfFVAJnQ61B4EQDdE6Jscx326yF for testing
+      name: "Bitcoin",
+      description: "My Wallet",
+      publickey: "3KBKa6uJfFVAJnQ61B4EQDdE6Jscx326yF", //3KBKa6uJfFVAJnQ61B4EQDdE6Jscx326yF for testing
       recieved: 0,
       spent: 0,
       numOfTxs: 0,
-      balance: '',
+      balance: "",
       txs: []
     };
   }

@@ -5,8 +5,8 @@
 }
 
 .landing_reg {
-  margin: 0 auto;
-  padding: 50px;
+  margin: 0 auto 20px auto;
+  padding: 30px;
   text-align: center;
   width: 50%;
 }
@@ -24,8 +24,8 @@
 }
 
 .landing_log {
-  margin: 0 auto;
-  padding: 50px;
+  margin: 0 auto 20px auto;
+  padding: 30px;
   text-align: center;
   width: 50%;
 }
@@ -39,7 +39,6 @@
   font-size: 1.8rem;
   margin: 50px;
   padding: 10px;
-
 }
 
 .landing_market-title {

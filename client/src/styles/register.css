@@ -79,6 +79,10 @@
   width: 20%;
 }
 
+.buttonSubmit:hover {
+  text-decoration: underline;
+}
+
 .register_footer {
   background-color: #092956;
   height: 15vh;

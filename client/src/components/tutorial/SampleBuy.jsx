@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import prices from "../../helpers/market.js";
+import React, { Component } from 'react';
+import prices from '../../helpers/market.js';
 
 class SampleBuy extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class SampleBuy extends Component {
       totalCost: 0,
       totalBTC: 0,
       BTC: {
-        Name: "Bitcoin",
+        Name: 'Bitcoin',
         Price: 0
       }
     };
@@ -27,13 +27,12 @@ class SampleBuy extends Component {
     );
   };
 
-  handleBTC = ev => {
+  controlBTC = ev => {
     ev.preventDefault();
-    const amountOfBTC = ev.target.value;
-    const totalCost = amountOfBTC * this.state.BTC.Price;
-    const totalBTC = amountOfBTC;
+    this.setState({ testBTCBalance: ev.target.value });
+    const totalCost = this.state.testBTCBalance * this.state.BTC.Price;
+    const totalBTC = this.testBTCBalance;
     const totals = [totalCost, totalBTC];
-    this.setState({ totalCost: totalCost, totalBTC: amountOfBTC });
     this.props.sendData(totals);
   };
 
@@ -122,7 +121,7 @@ class SampleBuy extends Component {
               Amount in BTC:
               <input
                 className="buy_comp-input"
-                onChange={this.handleBTC}
+                onSubmit={this.handleBTC}
                 type="number"
               />
             </div>

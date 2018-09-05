@@ -69,6 +69,7 @@ class Mnemonic extends Component {
           </div>
           {/* Eventually setup an intermediary confirm */}
           <MakeWallet
+            history={this.props.history}
             publicKey={this.state.publicKey}
             privateKey={this.state.privateKey}
           />

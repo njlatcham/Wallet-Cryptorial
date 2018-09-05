@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 // import Resource from '../models/resource.js';
 // const User = Resource('users');
 
@@ -23,7 +23,9 @@ class Login extends Component {
             Password:
             <input type="password" />
           </label>
-          <button type="submit">Login</button>
+          <button onClick={this.login} type="submit">
+            Login
+          </button>
         </form>
       </section>
     );

@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import { DottedProgress } from "react-progress-ui";
+import React, { Component } from 'react';
+import { DottedProgress } from 'react-progress-ui';
 // Components
-import TutorialStart from "./tutorial/TutorialStart";
-import CreateMnemonic from "./tutorial/CreateMnemonic";
-import PrivateKey from "./tutorial/PrivateKey";
-import PublicKey from "./tutorial/PublicKey";
-import CoinInfo from "./tutorial/CoinInfo";
-import SampleBuy from "./tutorial/SampleBuy";
-import SampleSell from "./tutorial/SampleSell";
-import BlockchainExplorer from "./tutorial/BlockchainExplorer";
-import TutorialFinish from "./tutorial/TutorialFinish";
+import TutorialStart from './tutorial/TutorialStart';
+import CreateMnemonic from './tutorial/CreateMnemonic';
+import PrivateKey from './tutorial/PrivateKey';
+import PublicKey from './tutorial/PublicKey';
+import CoinInfo from './tutorial/CoinInfo';
+import SampleBuy from './tutorial/SampleBuy';
+import SampleSell from './tutorial/SampleSell';
+import BlockchainExplorer from './tutorial/BlockchainExplorer';
+import TutorialFinish from './tutorial/TutorialFinish';
 // Generate Random Bitcoin Mnemonic -> Private Key (WIF) -> Public Key
 // This will be a "test wallet" but the keys will correspond with real
 // bitcoin addresses
-import generator from "../helpers/generator";
+import generator from '../helpers/generator';
 const generated = generator();
 
 class Tutorial extends Component {
@@ -26,7 +26,9 @@ class Tutorial extends Component {
       publ: generated.address,
       priv: generated.wif,
       sampleUSDBalance: 100000,
-      sampleBTCBalance: 0
+      sampleBTCBalance: 0,
+      bought: {},
+      sold: {}
     };
   }
 
@@ -42,10 +44,22 @@ class Tutorial extends Component {
     this.setState({ page: 1 });
   };
 
-  myCallback = dataFromSampleBuy => {
+  sendData = dataFromSampleBuy => {
     this.setState({
       sampleUSDBalance: this.state.sampleUSDBalance - dataFromSampleBuy[0],
-      sampleBTCBalance: dataFromSampleBuy[1]
+      sampleBTCBalance: dataFromSampleBuy[1],
+      bought: {
+        spent: dataFromSampleBuy[0],
+        receieved: dataFromSampleBuy[1]
+      }
+    });
+  };
+  sendDataSell = dataFromSampleSell => {
+    this.setState({
+      sold: {
+        spent: dataFromSampleSell[0],
+        receieved: dataFromSampleSell[1]
+      }
     });
   };
 
@@ -100,7 +114,7 @@ class Tutorial extends Component {
           <SampleBuy
             pageForwards={this.pageForwards}
             pageBackwards={this.pageBackwards}
-            sendData={this.myCallback}
+            sendData={this.sendData}
             public={this.state.publ}
           />
         );
@@ -113,6 +127,7 @@ class Tutorial extends Component {
             BTCbalance={this.state.sampleBTCBalance}
             USDbalance={this.state.sampleUSDBalance}
             private={this.state.priv}
+            sendData={this.sendDataSell}
           />
         );
         break;
@@ -148,17 +163,17 @@ class Tutorial extends Component {
               activeStep={this.state.page}
               activeDotColor="#0A971F"
               dotStyles={{
-                background: "white", // should be changed
-                border: "1px solid #000",
-                borderRadius: "12.5px",
-                height: "25px",
-                width: "25px"
+                background: 'white', // should be changed
+                border: '1px solid #000',
+                borderRadius: '12.5px',
+                height: '25px',
+                width: '25px'
               }}
               lineStyles={{
-                background: "#000",
-                height: "2px",
-                margin: "auto auto",
-                width: "70%"
+                background: '#000',
+                height: '2px',
+                margin: 'auto auto',
+                width: '70%'
               }}
             />
           </div>

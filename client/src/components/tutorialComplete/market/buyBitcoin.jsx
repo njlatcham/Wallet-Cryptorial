@@ -88,18 +88,15 @@ class BuyBitcoinModal extends Component {
           </Modal.Body>
 
           <Modal.Footer>
-            <Button type="submit">
-              <a
-                class="coinbase-widget"
-                id="coinbase_widget"
-                data-address="{{ address }}"
-                data-amount="{{ amount }}"
-                data-code="{{ code }}"
-                href=""
-              >
-                Buy bitcoin using Coinbase
-              </a>
-            </Button>
+            <a
+              className="coinbase-widget btn btn-primary"
+              target="_newtab"
+              id="coinbase_widget"
+              href="https://buy.coinbase.com?code=41531c99-ac61-554d-8fbc-430e3344c2e8&address=1FoemeQ8ALM7TNouHkco1p3n9TrynX8pUZ&amount=20
+              "
+            >
+              Buy bitcoin using Coinbase
+            </a>
 
             <Button onClick={this.handleClose}>Close</Button>
           </Modal.Footer>

@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import prices from "../../helpers/market.js";
+import React, { Component } from 'react';
+import prices from '../../helpers/market.js';
 
 class CoinInfo extends Component {
   constructor(props) {
@@ -7,19 +7,19 @@ class CoinInfo extends Component {
 
     this.state = {
       BTC: {
-        Name: "Bitcoin",
+        Name: 'Bitcoin',
         Price: 0
       },
       LTC: {
-        Name: "Litecoin",
+        Name: 'Litecoin',
         Price: 0
       },
       ETH: {
-        Name: "Bitcoin",
+        Name: 'Bitcoin',
         Price: 0
       },
       DOGE: {
-        Name: "DogeCoin",
+        Name: 'DogeCoin',
         Price: 0
       }
     };
@@ -79,7 +79,7 @@ class CoinInfo extends Component {
           </button>
         </div>
 
-        <div className="coin_comp">
+        <div className="coin_comp container">
           <h3 className="coin_comp-title">Popular Digital Assets</h3>
           <div className="coin_comp-desc">
             <div className="btc_desc">

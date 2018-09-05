@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import prices from "../../helpers/market.js";
+import React, { Component } from 'react';
+import prices from '../../helpers/market.js';
 
 class SampleSell extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class SampleSell extends Component {
       totalCost: 0,
       totalBTC: 0,
       BTC: {
-        Name: "Bitcoin",
+        Name: 'Bitcoin',
         Price: 0
       }
     };
@@ -48,7 +48,16 @@ class SampleSell extends Component {
   //     window.alert("Transaction is not valid");
   //   }
   // };
-
+  handleUSD = ev => {
+    ev.preventDefault();
+    const amountOfBTC = ev.target.value;
+    const totalCost = amountOfBTC * this.state.BTC.Price;
+    const totalBTC = amountOfBTC;
+    const totals = [totalCost, totalBTC];
+    this.setState({ totalCost: totalCost, totalBTC: amountOfBTC });
+    this.props.sendData(totals);
+    this.props.pageForwards();
+  };
   componentDidMount() {
     this._setStats();
   }
@@ -128,7 +137,7 @@ class SampleSell extends Component {
             <div className="line" />
           </div>
 
-          <form onSubmit={this.handleTransaction}>
+          <form>
             <div>
               <div className="buy_label">Please Enter your Public Key:</div>
               <input
@@ -146,7 +155,7 @@ class SampleSell extends Component {
             <button
               className="buttonForwards btn btn-primary btn-lg"
               type="submit"
-              onClick={this.props.pageForwards}
+              onClick={this.handleUSD}
             >
               Purchase
               <i className="fas fa-arrow-right" />

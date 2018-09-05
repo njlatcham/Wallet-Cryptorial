@@ -85,16 +85,18 @@ class Wallets extends Component {
       <section className="container">
         <Row>
           <Col xs={12}>
-            <div className="fixer">
-              <PageHeader>Wallets</PageHeader>
+            <PageHeader>
+              Wallets
               <Button
+                className="fixer"
                 bsStyle="primary"
                 bsSize="large"
                 onClick={this.handleShow}
               >
                 Add Wallet
               </Button>
-            </div>
+            </PageHeader>
+
             <Modal show={this.state.show} onHide={this.handleClose}>
               <Modal.Header closeButton>
                 <Modal.Title>Add Wallet</Modal.Title>
@@ -140,24 +142,26 @@ class Wallets extends Component {
               </Modal.Footer>
             </Modal>
 
-            <Table>
-              <thead>
-                <tr>
-                  <td>Coin</td>
-                  <td>Wallet-Name</td>
-                  <td>Address</td>
-                  <td>Total Recieved</td>
-                  <td>Total Spent</td>
-                  <td>Total # of Transactions</td>
-                  <td>Balance</td>
-                </tr>
-              </thead>
-              <tbody>
-                {this.state.publicKeys.map((address, index) => (
-                  <Wallet publickey={address.publickey} index={index} />
-                ))}
-              </tbody>
-            </Table>
+            <Row className="wallet">
+              <Table>
+                <thead>
+                  <tr>
+                    <td>Coin</td>
+                    <td>Wallet-Name</td>
+                    <td>Address</td>
+                    <td>Total Recieved</td>
+                    <td>Total Spent</td>
+                    <td>Total # of Transactions</td>
+                    <td>Balance</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  {this.state.publicKeys.map((address, index) => (
+                    <Wallet publickey={address.publickey} index={index} />
+                  ))}
+                </tbody>
+              </Table>
+            </Row>
           </Col>
         </Row>
       </section>

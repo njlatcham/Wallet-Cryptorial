@@ -3,6 +3,28 @@
   margin: 0;
 }*/
 
+.navbar {
+  margin: 0;
+}
+
+.a {
+  display: flex;
+  align-items: center;
+  height: 100px;
+}
+
+/*.center {
+  justify-content: center;
+}*/
+
+.brand-nav {
+  font-size: 4rem;
+}
+
+.header-nav {
+  font-size: 2.5rem;
+}
+
 /*.app {
   background-color: #fff;
   text-align: center;

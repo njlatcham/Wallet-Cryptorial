@@ -104,7 +104,7 @@ class Landing extends Component {
               crypto-wallet and have the knowledge to buy your own coins. To
               begin, click the register button below and let's get started!
             </p>
-            <Link className="button" to={"/register"}>
+            <Link className="btn btn-primary btn-lg" to={"/register"}>
               Register
             </Link>
           </div>
@@ -116,7 +116,7 @@ class Landing extends Component {
               create your own CryptoCoin wallets, start buying coins, and begin
               your dive into the world of CryptoCurrency.
             </p>
-            <Link className="button" to={"/login"}>
+            <Link className="btn btn-primary btn-lg" to={"/login"}>
               Login
             </Link>
           </div>

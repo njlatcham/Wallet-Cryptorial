@@ -55,7 +55,7 @@ class Register extends Component {
               be discussed later in the Cryptorial.
             </p>
             <Link
-              className="buttonBackwards"
+              className="btn btn-primary btn-lg changemargin"
               onClick={this.props.pageBackwards}
               to={"/home"}
             >
@@ -96,16 +96,13 @@ class Register extends Component {
                 value={this.state.passwordConfirmation}
               />
               <button
-                className="buttonSubmit"
+                className="btn btn-primary btn-lg width"
                 onClick={this.props.pageForwards}
                 type="submit"
               >
                 Submit
               </button>
             </form>
-            <Link onClick={this.props.pageForwards} to={"/tutorial"}>
-              Link to tutorial
-            </Link>
           </div>
           <footer className="register_footer" />
         </section>

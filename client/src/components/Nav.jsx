@@ -1,40 +1,48 @@
-import React from "react";
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from "react-bootstrap";
+import React, { Component } from "react";
+import { Navbar, Nav, NavItem } from "react-bootstrap";
 
-const Navigation = () => {
-  return (
-    <Navbar inverse staticTop collapseOnSelect>
-      <Navbar.Header>
-        <Navbar.Brand>
-          <a href="/">Wallet-Cryptorial</a>
-        </Navbar.Brand>
-        <Navbar.Toggle />
-      </Navbar.Header>
-      <Navbar.Collapse>
-        <Nav>
-          <NavItem eventKey={1} href="#">
-            Link
-          </NavItem>
-          <NavItem eventKey={2} href="#">
-            Link
-          </NavItem>
-          <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-            <MenuItem eventKey={3.1}>Action</MenuItem>
-            <MenuItem eventKey={3.2}>Another action</MenuItem>
-            <MenuItem eventKey={3.3}>Something else here</MenuItem>
-          </NavDropdown>
-        </Nav>
-        <Nav pullRight>
-          <NavItem eventKey={1} href="#">
-            Link Right
-          </NavItem>
-          <NavItem eventKey={2} href="#">
-            Link Right
-          </NavItem>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
-  );
-};
+class Navigation extends Component {
+  logout = ev => {
+    console.log("Hello");
+    localStorage.clear();
+  };
+
+  render() {
+    return (
+      <Navbar staticTop collapseOnSelect className="a">
+        <Navbar.Collapse>
+          <Navbar.Header className="text-center">
+            <Navbar.Brand>
+              <a className="brand-nav" href="/">
+                Wallet-Cryptorial
+              </a>
+            </Navbar.Brand>
+            <Navbar.Toggle />
+          </Navbar.Header>
+
+          <Nav pullRight>
+            <NavItem className="header-nav" eventKey={1} href="/wallets">
+              Wallets
+            </NavItem>
+            <NavItem className="header-nav" eventKey={2} href="/market">
+              Market
+            </NavItem>
+            <NavItem className="header-nav" eventKey={1} href="/tutorial">
+              Tutorial
+            </NavItem>
+            <NavItem
+              className="header-nav"
+              onClick={this.logout}
+              eventKey={2}
+              href="/"
+            >
+              Logout
+            </NavItem>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    );
+  }
+}
 
 export default Navigation;

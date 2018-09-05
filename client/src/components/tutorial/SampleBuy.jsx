@@ -37,19 +37,19 @@ class SampleBuy extends Component {
     this.props.sendData(totals);
   };
 
-  handleTransaction = ev => {
-    ev.preventDefault();
-    if (
-      ev.target.private.value === this.props.private &&
-      this.state.totalCost < this.state.testBalance
-    ) {
-      this.props.pageForwards();
-    } else {
-      window.alert(
-        "Transaction is not valid, ensure that your private key is correct and your transaction cost is less than your balance."
-      );
-    }
-  };
+  // handleTransaction = ev => {
+  //   ev.preventDefault();
+  //   if (
+  //     ev.target.private.value === this.props.public &&
+  //     this.state.totalCost < this.state.testBalance
+  //   ) {
+  //     this.props.pageForwards();
+  //   } else {
+  //     window.alert(
+  //       "Transaction is not valid, ensure that your private key is correct and your transaction cost is less than your balance."
+  //     );
+  //   }
+  // };
 
   componentDidMount() {
     this._setStats();
@@ -132,23 +132,27 @@ class SampleBuy extends Component {
 
           <form onSubmit={this.handleTransaction}>
             <div>
-              <p className="buy_label">
-                In the event you did not write your private key down, here it
-                is:
-              </p>
-              <div className="reminderPrivate">{this.props.private}</div>
-              <div className="line" />
               <div className="buy_label">
-                Please Enter your Private Key to authorize this transaction:
+                Please Enter your Public Key to let the exchange know where to
+                send these funds:
               </div>
-              <input className="privateKey" name="private" type="text" />
+              <input
+                className="privateKey"
+                name="private"
+                type="text"
+                defaultValue={this.props.public}
+              />
             </div>
             {/*<div className="line" />*/}
             <div className="buy_comp-BTC center">
               Please ensure that the Amount in USD is less than your Test
               Balance.
             </div>
-            <button className="buttonForwards" type="submit">
+            <button
+              className="buttonForwards"
+              type="submit"
+              onClick={this.props.pageForwards}
+            >
               Purchase
               <i className="fas fa-arrow-right" />
             </button>

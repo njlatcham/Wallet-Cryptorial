@@ -19,6 +19,7 @@
 .landing_reg-para {
   font-family: "Barlow", sans-serif;
   font-size: 1.8rem;
+  height: 375px;
   padding-bottom: 20px;
   text-align: left;
 }
@@ -39,6 +40,7 @@
   font-size: 1.8rem;
   margin: 50px;
   padding: 10px;
+  max-width: 20%;
 }
 
 .landing_market-title {

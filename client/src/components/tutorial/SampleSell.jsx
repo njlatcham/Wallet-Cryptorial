@@ -27,27 +27,27 @@ class SampleSell extends Component {
     );
   };
 
-  handleUSD = ev => {
-    ev.preventDefault();
-    const amountOfUSD = ev.target.value;
-    const totalBTC = amountOfUSD / this.state.BTC.Price;
-    this.setState({ totalCost: amountOfUSD, totalBTC: totalBTC });
-  };
+  // handleUSD = ev => {
+  //   ev.preventDefault();
+  //   const amountOfUSD = ev.target.value;
+  //   const totalBTC = amountOfUSD / this.state.BTC.Price;
+  //   this.setState({ totalCost: amountOfUSD, totalBTC: totalBTC });
+  // };
 
-  handleTransaction = ev => {
-    ev.preventDefault();
-    console.log(ev.target.public.value);
-    if (
-      ev.target.public.value === this.props.public &&
-      this.state.totalBTC < this.state.testBTCBalance
-      // &&
-      // this.state.testBTCBalance < this.state.testBTCBalance
-    ) {
-      this.props.pageForwards();
-    } else {
-      window.alert("Transaction is not valid");
-    }
-  };
+  // handleTransaction = ev => {
+  //   ev.preventDefault();
+  //   console.log(ev.target.public.value);
+  //   if (
+  //     ev.target.public.value === this.props.public &&
+  //     this.state.totalBTC < this.state.testBTCBalance
+  //     // &&
+  //     // this.state.testBTCBalance < this.state.testBTCBalance
+  //   ) {
+  //     this.props.pageForwards();
+  //   } else {
+  //     window.alert("Transaction is not valid");
+  //   }
+  // };
 
   componentDidMount() {
     this._setStats();
@@ -130,20 +130,24 @@ class SampleSell extends Component {
 
           <form onSubmit={this.handleTransaction}>
             <div>
-              <p className="buy_label">
-                In the event you did not write your public key down, here it is:
-              </p>
-              <div className="reminderPrivate">{this.props.public}</div>
-              <div className="line" />
               <div className="buy_label">Please Enter your Public Key:</div>
-              <input className="privateKey" name="public" type="text" />
+              <input
+                className="privateKey"
+                name="public"
+                type="text"
+                defaultValue={this.props.private}
+              />
             </div>
             <div className="line" />
             <div className="buy_comp-BTC center">
               Please ensure that the Amount in BTC is less than your BTC
               Balance.
             </div>
-            <button className="buttonForwards" type="submit">
+            <button
+              className="buttonForwards"
+              type="submit"
+              onClick={this.props.pageForwards}
+            >
               Purchase
               <i className="fas fa-arrow-right" />
             </button>

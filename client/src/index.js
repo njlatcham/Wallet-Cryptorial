@@ -26,6 +26,7 @@ import "./styles/tutorialStyles/blockchainexplorer.css";
 import "./styles/tutorialStyles/tutorialcomplete.css";
 
 import "./styles/otherStyles/market.css";
+import "./styles/otherStyles/wallets.css";
 
 // ReactDOM Render App
 ReactDOM.render(

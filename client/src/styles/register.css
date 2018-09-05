@@ -2,7 +2,7 @@
   background-color: white;
   color: black;
   font-size: 20px;
-  height: 100vh;
+  height: 80vh;
   margin: 0 auto;
   padding-top: 50px;
   width: 80%;
@@ -67,6 +67,15 @@
   color: black;
   margin: 0 auto;
   width: 50%;
+}
+
+.width {
+  margin: 10px auto;
+  width: 100px;
+}
+
+.changemargin {
+  margin-top: 85px;
 }
 
 .buttonSubmit {

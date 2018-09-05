@@ -21,7 +21,7 @@ class Tutorial extends Component {
     super(props);
 
     this.state = {
-      page: 9,
+      page: 1,
       mnemonic: generated.mnemonic,
       publ: generated.address,
       priv: generated.wif,
@@ -101,7 +101,7 @@ class Tutorial extends Component {
             pageForwards={this.pageForwards}
             pageBackwards={this.pageBackwards}
             sendData={this.myCallback}
-            private={this.state.priv}
+            public={this.state.publ}
           />
         );
         break;
@@ -112,7 +112,7 @@ class Tutorial extends Component {
             pageBackwards={this.pageBackwards}
             BTCbalance={this.state.sampleBTCBalance}
             USDbalance={this.state.sampleUSDBalance}
-            public={this.state.publ}
+            private={this.state.priv}
           />
         );
         break;

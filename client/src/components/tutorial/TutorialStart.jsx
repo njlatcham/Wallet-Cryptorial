@@ -7,7 +7,7 @@ class Homepage extends Component {
         <div className="contents">
           <h2 className="contents_title">Table of Contents</h2>
           <ul className="contents_list">
-            <li>
+            <li className="list-items">
               <span className="chapter">Chapter 1:</span> The Cryptorial
             </li>
             <li>
@@ -58,7 +58,10 @@ class Homepage extends Component {
             create a real crypto-wallet and begin your journey into the world of
             cryptocurrency.
           </p>
-          <button className="buttonForwards" onClick={this.props.pageForwards}>
+          <button
+            className="btn btn-primary btn-lg"
+            onClick={this.props.pageForwards}
+          >
             Get Started!
             <i className="fas fa-arrow-right" />
           </button>

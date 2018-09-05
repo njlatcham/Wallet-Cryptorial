@@ -1,6 +1,8 @@
-import React, { Component } from "react";
-import { Link, Redirect } from "react-router-dom";
-import generator from "../../helpers/generator";
+import React, { Component } from 'react';
+import { Link, Redirect } from 'react-router-dom';
+import generator from '../../helpers/generator';
+import MakeWallet from './MakeWallet';
+import { PageHeader } from 'react-bootstrap';
 // import qr from "../../helpers/qrGenerator";
 
 class Mnemonic extends Component {
@@ -8,10 +10,10 @@ class Mnemonic extends Component {
     super(props);
 
     this.state = {
-      mnemonic: "",
-      privateKey: "",
-      publicKey: "",
-      confirm: ""
+      mnemonic: '',
+      privateKey: '',
+      publicKey: '',
+      confirm: ''
     };
   }
 
@@ -30,9 +32,9 @@ class Mnemonic extends Component {
   doesMatch = ev => {
     ev.preventDefault();
     if (this.state.confirm === this.state.mnemonic) {
-      return <Redirect to="/makewallet" />;
+      return this.props.history.push('/wallets');
     } else {
-      return alert("They do not match!");
+      return alert('They do not match!');
     }
   };
   componentDidMount() {
@@ -42,34 +44,34 @@ class Mnemonic extends Component {
   render() {
     return (
       <div className="mnemonic container">
-        <h3>Mnemonic Recovery Phrase</h3>
-        <ul>
-          Copy This
-          <div>{this.state.mnemonic}</div>
-          Re-Enter
+        <PageHeader>Mnemonic Recovery Phrase</PageHeader>
+        <ul className="jumbotron text-center  ">
+          <h3>
+            Copy this set of words down - We will not be able to recreate this
+            Phrase
+          </h3>
           <div>
-            <form onSubmit={this.doesMatch}>
-              <input
-                className="mnemonic-input"
-                type="text"
-                onChange={this.controlMnemonic}
-                value={this.state.confirm}
-                placeholder="Re-Enter your Mnemonic Phrase Here after you've copied it down somewhere safe!"
-              />
-            </form>
+            <h2>{this.state.mnemonic}</h2>
+          </div>
+          <h3>Re-Enter</h3>
+          <div>
+            <h2>
+              <form onSubmit={this.doesMatch}>
+                <input
+                  className="mnemonic-input"
+                  type="text"
+                  value={this.state.confirm}
+                  onChange={this.controlMnemonic}
+                  placeholder="Re-Enter your Mnemonic Phrase Here after you've copied it down somewhere safe!"
+                />
+              </form>
+            </h2>
           </div>
           {/* Eventually setup an intermediary confirm */}
-          <Link
-            to={{
-              pathname: "/makewallet",
-              state: {
-                privateKey: this.state.privateKey,
-                publicKey: this.state.publicKey
-              }
-            }}
-          >
-            Generate Keys
-          </Link>
+          <MakeWallet
+            publicKey={this.state.publicKey}
+            privateKey={this.state.privateKey}
+          />
         </ul>
       </div>
     );

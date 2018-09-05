@@ -1,9 +1,14 @@
-import React, { Component } from "react";
-import { Navbar, Nav, NavItem } from "react-bootstrap";
+import React, { Component } from 'react';
+import { Navbar, Nav, NavItem } from 'react-bootstrap';
 
 class Navigation extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+  }
   logout = ev => {
-    console.log("Hello");
+    console.log('Hello');
     localStorage.clear();
   };
 

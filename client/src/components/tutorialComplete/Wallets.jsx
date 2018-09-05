@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Table,
   Row,
@@ -11,11 +11,11 @@ import {
   Form,
   Panel,
   ButtonGroup
-} from "react-bootstrap";
-import Wallet from "./wallets/wallet";
-import isValid from "../../helpers/isValid";
-import Resource from "../../models/resource";
-const Key = Resource("keys");
+} from 'react-bootstrap';
+import Wallet from './wallets/wallet';
+import isValid from '../../helpers/isValid';
+import Resource from '../../models/resource';
+const Key = Resource('keys');
 
 class Wallets extends Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class Wallets extends Component {
     this.state = {
       publicKeys: [],
       show: false,
-      key: "",
+      key: '',
       open: false
     };
   }
@@ -38,7 +38,7 @@ class Wallets extends Component {
   // END OF MODAL FUNCTIONS
   // GET PUBLIC ADRESSES FROM DB
   getWallets = () => {
-    Key.find(localStorage.getItem("userid"))
+    Key.find(localStorage.getItem('userid'))
       .then(result => {
         console.log(result);
         this.setState({
@@ -58,16 +58,16 @@ class Wallets extends Component {
     isValid(this.state.key).then(result => {
       console.log(result);
       if (result === false) {
-        return alert("key is invalid");
+        return alert('key is invalid');
       }
       const data = {
         publicKey: this.state.key,
-        userId: localStorage.getItem("userid")
+        userId: localStorage.getItem('userid')
       };
 
       Key.create(data)
         .then(() => {
-          alert("You have successfully added your public key");
+          alert('You have successfully added your public key');
           this.handleClose();
           this.getWallets();
         })
@@ -104,15 +104,14 @@ class Wallets extends Component {
 
               <Modal.Body>
                 <ButtonGroup vertical block>
-                  <Button>
-                    <Link
-                      className="noLink"
-                      style={{ textDecoration: "none", color: "#333" }}
-                      to={"/mnemonic"}
-                    >
-                      Create New Wallet
-                    </Link>
-                  </Button>
+                  <Link
+                    className="noLink"
+                    style={{ textDecoration: 'none', color: '#333' }}
+                    to="/mnemonic"
+                  >
+                    <Button>Create New Wallet</Button>
+                  </Link>
+
                   <Button
                     onClick={() => this.setState({ open: !this.state.open })}
                   >
@@ -135,11 +134,6 @@ class Wallets extends Component {
                   </Panel.Collapse>
                 </Panel>
               </Modal.Body>
-
-              <Modal.Footer>
-                <Button onClick={console.log(this)}>Create New Wallet</Button>
-                <Button onClick={this.handleClose}>Close</Button>
-              </Modal.Footer>
             </Modal>
 
             <Row className="wallet">

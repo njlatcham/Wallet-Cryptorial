@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
-import generator from '../../helpers/generator';
-import MakeWallet from './MakeWallet';
-import { PageHeader } from 'react-bootstrap';
+import React, { Component } from "react";
+import { Link, Redirect } from "react-router-dom";
+import generator from "../../helpers/generator";
+import MakeWallet from "./MakeWallet";
+import { PageHeader } from "react-bootstrap";
 // import qr from "../../helpers/qrGenerator";
 
 class Mnemonic extends Component {
@@ -10,10 +10,10 @@ class Mnemonic extends Component {
     super(props);
 
     this.state = {
-      mnemonic: '',
-      privateKey: '',
-      publicKey: '',
-      confirm: ''
+      mnemonic: "",
+      privateKey: "",
+      publicKey: "",
+      confirm: ""
     };
   }
 
@@ -32,9 +32,9 @@ class Mnemonic extends Component {
   doesMatch = ev => {
     ev.preventDefault();
     if (this.state.confirm === this.state.mnemonic) {
-      return this.props.history.push('/wallets');
+      return this.props.history.push("/wallets");
     } else {
-      return alert('They do not match!');
+      return alert("They do not match!");
     }
   };
   componentDidMount() {
@@ -44,7 +44,9 @@ class Mnemonic extends Component {
   render() {
     return (
       <div className="mnemonic container">
-        <PageHeader>Mnemonic Recovery Phrase</PageHeader>
+        <PageHeader className="mnemonic-title">
+          Mnemonic Recovery Phrase
+        </PageHeader>
         <ul className="jumbotron text-center  ">
           <h3>
             Copy this set of words down - We will not be able to recreate this
@@ -62,7 +64,7 @@ class Mnemonic extends Component {
                   type="text"
                   value={this.state.confirm}
                   onChange={this.controlMnemonic}
-                  placeholder="Re-Enter your Mnemonic Phrase Here after you've copied it down somewhere safe!"
+                  placeholder="Re-Enter your Mnemonic Phrase Here"
                 />
               </form>
             </h2>

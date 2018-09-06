@@ -7,7 +7,7 @@ class PrivateKey extends Component {
         <div className="private_description">
           <h3 className="private_desc-title">Private Key Description</h3>
           <p className="private_desc-para">
-            A Private Key is a 256-bit security level number that is generated
+            A private key is a 256-bit security level number that is generated
             from the mnemonic phrase. The private key is similar to the passcode
             used to access your bank account, except it is a little more secure
             than a 4 digit pin. The key is what permits you to send irreversible

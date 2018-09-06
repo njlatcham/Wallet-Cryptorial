@@ -95,13 +95,13 @@ class Landing extends Component {
           <div className="landing_reg">
             <h2 className="landing_reg-title">The Cryptorial</h2>
             <p className="landing_reg-para">
-              Welcome to Cryptorial, a 10 step tutorial that focuses on the
+              Welcome to Cryptorial, an 8-step tutorial that focuses on the
               buying and selling of Bitcoin, as well as other cryptocoins. Here
               you will learn everything from how to create your very own
-              crypto-wallet, to what cryptocurrency is, and how the blockchain
+              CryptoWallet, to what cryptocurrency is, and how the blockchain
               functions. A lot of these words may seem unfamiliar to you at
               first, but in a short while, you will know enough to create a real
-              crypto-wallet and have the knowledge to buy your own coins. To
+              CryptoWallet and have the knowledge to buy your own coins. To
               begin, click the register button below and let's get started!
             </p>
             <Link className="btn btn-primary btn-lg" to={"/register"}>
@@ -113,8 +113,8 @@ class Landing extends Component {
             <p className="landing_reg-para">
               Once you have gone through and completed the tutorial, you will
               have enough knowledge on how the system works. From there you can
-              create your own CryptoCoin wallets, start buying coins, and begin
-              your dive into the world of CryptoCurrency.
+              create your own CryptoWallets, start buying coins, and begin your
+              dive into the world of CryptoCurrency.
             </p>
             <Link className="btn btn-primary btn-lg" to={"/login"}>
               Login

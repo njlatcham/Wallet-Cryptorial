@@ -15,19 +15,18 @@ class PublicKey extends Component {
             A public key is derived from the private key using a complex
             mathematic algorithm. This is used as the address where you will
             recieve transactions sent from someone else. You might think of it
-            as if it was your mailbox, but instead of accepting mail you can
-            receive cryptocurrency that someone has sent to you. Like the
-            private key that you just received, your public key has 256-bit
-            levels of security, and unlike a private key, a public key can be
-            shared openly without any concern that someone will use it to access
-            your wallet.
+            as your mailbox, but instead of accepting mail you can receive
+            cryptocurrency that someone has sent to you. Like the private key
+            you just received, your public key has 256-bit level of security,
+            and unlike a private key, a public key can be shared openly without
+            any concern that someone will use it to access your wallet.
           </p>
           <p className="public_desc-para">
-            This key is used as the address where coins would be sent to. If you
+            This key is used as the address where coins will be sent to. If you
             were in the process of selling coins to someone else, you would
             input their public address. If someone was sending you coins, they
-            would need you public address, but be very careful not to send them
-            your private address, or you will most likely lose all your assets.
+            would need your public address, but be very careful not to send them
+            your private key, or you will most likely lose all your assets.
           </p>
           <button
             className="buttonBackwards btn btn-primary btn-lg"
@@ -47,7 +46,7 @@ class PublicKey extends Component {
           </p>
           <div className="line" />
           <p className="public_comp-desc">
-            This key is used as the address where coins will be
+            This key is used as the address where coins will be sent.
           </p>
           <button
             className="buttonForwards btn btn-primary btn-lg"

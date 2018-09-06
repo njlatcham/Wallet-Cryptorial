@@ -1,19 +1,18 @@
-import React, { Component } from 'react';
-import { DottedProgress } from 'react-progress-ui';
+import React, { Component } from "react";
+import { DottedProgress } from "react-progress-ui";
 // Components
-import TutorialStart from './tutorial/TutorialStart';
-import CreateMnemonic from './tutorial/CreateMnemonic';
-import PrivateKey from './tutorial/PrivateKey';
-import PublicKey from './tutorial/PublicKey';
-import CoinInfo from './tutorial/CoinInfo';
-import SampleBuy from './tutorial/SampleBuy';
-import SampleSell from './tutorial/SampleSell';
-import BlockchainExplorer from './tutorial/BlockchainExplorer';
-import TutorialFinish from './tutorial/TutorialFinish';
+import TutorialStart from "./tutorial/TutorialStart";
+import CreateMnemonic from "./tutorial/CreateMnemonic";
+import PrivateKey from "./tutorial/PrivateKey";
+import PublicKey from "./tutorial/PublicKey";
+import CoinInfo from "./tutorial/CoinInfo";
+import SampleBuy from "./tutorial/SampleBuy";
+import SampleSell from "./tutorial/SampleSell";
+import BlockchainExplorer from "./tutorial/BlockchainExplorer";
 // Generate Random Bitcoin Mnemonic -> Private Key (WIF) -> Public Key
 // This will be a "test wallet" but the keys will correspond with real
 // bitcoin addresses
-import generator from '../helpers/generator';
+import generator from "../helpers/generator";
 const generated = generator();
 
 class Tutorial extends Component {
@@ -26,9 +25,7 @@ class Tutorial extends Component {
       publ: generated.address,
       priv: generated.wif,
       sampleUSDBalance: 100000,
-      sampleBTCBalance: 0,
-      bought: {},
-      sold: {}
+      sampleBTCBalance: 0
     };
   }
 
@@ -47,13 +44,10 @@ class Tutorial extends Component {
   sendData = dataFromSampleBuy => {
     this.setState({
       sampleUSDBalance: this.state.sampleUSDBalance - dataFromSampleBuy[0],
-      sampleBTCBalance: dataFromSampleBuy[1],
-      bought: {
-        spent: dataFromSampleBuy[0],
-        receieved: dataFromSampleBuy[1]
-      }
+      sampleBTCBalance: dataFromSampleBuy[1]
     });
   };
+
   sendDataSell = dataFromSampleSell => {
     this.setState({
       sold: {
@@ -132,15 +126,7 @@ class Tutorial extends Component {
         );
         break;
       case 8:
-        page = (
-          <BlockchainExplorer
-            pageForwards={this.pageForwards}
-            pageBackwards={this.pageBackwards}
-          />
-        );
-        break;
-      case 9:
-        page = <TutorialFinish pageReset={this.pageReset} />;
+        page = <BlockchainExplorer pageReset={this.pageReset} />;
         break;
       default:
         page = (
@@ -159,21 +145,21 @@ class Tutorial extends Component {
         <section className="footer">
           <div className="progressBar">
             <DottedProgress
-              numSteps={9}
+              numSteps={8}
               activeStep={this.state.page}
               activeDotColor="#0A971F"
               dotStyles={{
-                background: 'white', // should be changed
-                border: '1px solid #000',
-                borderRadius: '12.5px',
-                height: '25px',
-                width: '25px'
+                background: "white", // should be changed
+                border: "1px solid #000",
+                borderRadius: "12.5px",
+                height: "25px",
+                width: "25px"
               }}
               lineStyles={{
-                background: '#000',
-                height: '2px',
-                margin: 'auto auto',
-                width: '70%'
+                background: "#000",
+                height: "2px",
+                margin: "auto auto",
+                width: "70%"
               }}
             />
           </div>

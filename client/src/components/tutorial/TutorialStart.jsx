@@ -17,25 +17,24 @@ class Homepage extends Component {
               Chapter 7: Sample Selling Transaction
             </li>
             <li className="list-items">Chapter 8: Explore the Blockchain</li>
-            <li className="list-items">Chapter 9: Complete Tutorial</li>
           </ul>
         </div>
 
         <div className="noDescription">
           <h1 className="title">The Cryptorial</h1>
           <p className="desc_para">
-            Wallet Cryptorial is a quick and easy tool to help anyone with
-            little to no knowledge about the cryptocurrency world learn what the
-            blockchain is and how it works, how to create a crypto wallet, and
-            how to buy and sell cryptocurrency. This step by step tutorial will
-            walk you through the registration of an account, what a mnemonic
-            phrase, public key and private key are, and finally the creation of
-            your very own crypto-wallet. Once you have created your wallet, you
-            will continue forward with a few test transactions, buying a fake
-            Bitcoin and then selling it back using our own test coins. By the
-            end of this walkthrough, you will have all the knowledge needed to
-            create a real crypto-wallet and begin your journey into the world of
-            cryptocurrency.
+            The Cryptorial is a quick and easy tool to help anyone with little
+            to no knowledge about the cryptocurrency world. From here you will
+            learn what the blockchain is and how it works, how to create a
+            CryptoWallet and how to buy and sell cryptocurrency. This
+            step-by-step tutorial will walk you through the following; what a
+            mnemonic phrase is; what a public key and a private key are; and
+            finally the creation of your very own CryptoWallet. Once you have
+            created your wallet, you will be required to complete a few test
+            transactions such as buying a fake Bitcoin and selling it back using
+            our own test coins. By the end of this walkthrough, you will have
+            all the knowledge needed to create a real CryptoWallet and begin
+            your journey into the world of cryptocurrency.
           </p>
           <button
             className="btn btn-primary btn-lg"

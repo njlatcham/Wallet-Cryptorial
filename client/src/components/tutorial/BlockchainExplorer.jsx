@@ -1,10 +1,22 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class BlockchainExplorer extends Component {
   render() {
     return (
       <section className="componentContainer">
         <div className="blockchain_desc">
+          <h3 className="blockchain_desc-title">
+            You Have Completed the Tutorial!
+          </h3>
+          <p className="blockchain_desc-para">
+            Congratulations on completing the Cryptorial. You now know enough to
+            send and recieve cryptocurrency for real! Below is a quick overview
+            of what the blockchain is and how it functions. From this page, you
+            may either restart the tutorial, if you wish to take a look through
+            it again, or complete the tutorial, and move on to creating a real
+            cryptocurrency wallet.
+          </p>
           <h3 className="blockchain_desc-title">What is the Blockchain?</h3>
           <p className="blockchain_desc-para">
             The blockchain is the technology which records the transactions of
@@ -29,42 +41,16 @@ class BlockchainExplorer extends Component {
           </p>
           <button
             className="buttonBackwards btn btn-primary btn-lg"
-            onClick={this.props.pageBackwards}
+            onClick={this.props.pageReset}
           >
-            <i className="fas fa-arrow-left" />
-            Previous
+            <i className="fas fa-redo-alt" />
+            Restart Tutorial
           </button>
-        </div>
-
-        <div className="blockchain_comp">
-          <h3 className="blockchain_comp-title">Blockchain Transactions</h3>
-          <div className="blockchain_trans">
-            <h5 className="blockchain_trans-title">Bought</h5>
-            <div className="line" />
-            <div>
-              <p>Cost:</p>
-              <p>Spent:</p>
-              <p>Sender Address</p>
-              <p>Recieving Address</p>
-            </div>
-          </div>
-
-          <div className="blockchain_trans">
-            <h5 className="blockchain_trans-title">Sold</h5>
-            <div className="line" />
-            <div>
-              <p>Cost:</p>
-              <p>Spent:</p>
-              <p>Sender Address</p>
-              <p>Recieving Address</p>
-            </div>
-          </div>
-          <button
-            className="buttonForwards btn btn-primary btn-lg"
-            onClick={this.props.pageForwards}
-          >
-            Next
-            <i className="fas fa-arrow-right" />
+          <button className="buttonForwards btn btn-primary btn-lg">
+            <Link className="buttonLink" to={"/wallets"}>
+              Complete Tutorial
+            </Link>
+            <i className="fas fa-home" />
           </button>
         </div>
       </section>

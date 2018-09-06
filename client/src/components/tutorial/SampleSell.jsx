@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import prices from '../../helpers/market.js';
+import React, { Component } from "react";
+import prices from "../../helpers/market.js";
 
 class SampleSell extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class SampleSell extends Component {
       totalCost: 0,
       totalBTC: 0,
       BTC: {
-        Name: 'Bitcoin',
+        Name: "Bitcoin",
         Price: 0
       }
     };
@@ -27,37 +27,13 @@ class SampleSell extends Component {
     );
   };
 
-  // handleUSD = ev => {
-  //   ev.preventDefault();
-  //   const amountOfUSD = ev.target.value;
-  //   const totalBTC = amountOfUSD / this.state.BTC.Price;
-  //   this.setState({ totalCost: amountOfUSD, totalBTC: totalBTC });
-  // };
-
-  // handleTransaction = ev => {
-  //   ev.preventDefault();
-  //   console.log(ev.target.public.value);
-  //   if (
-  //     ev.target.public.value === this.props.public &&
-  //     this.state.totalBTC < this.state.testBTCBalance
-  //     // &&
-  //     // this.state.testBTCBalance < this.state.testBTCBalance
-  //   ) {
-  //     this.props.pageForwards();
-  //   } else {
-  //     window.alert("Transaction is not valid");
-  //   }
-  // };
   handleUSD = ev => {
     ev.preventDefault();
-    const amountOfBTC = ev.target.value;
-    const totalCost = amountOfBTC * this.state.BTC.Price;
-    const totalBTC = amountOfBTC;
-    const totals = [totalCost, totalBTC];
-    this.setState({ totalCost: totalCost, totalBTC: amountOfBTC });
-    this.props.sendData(totals);
-    this.props.pageForwards();
+    const totalCost = ev.target.value;
+    const totalBTC = totalCost / this.state.BTC.Price;
+    this.setState({ totalCost, totalBTC });
   };
+
   componentDidMount() {
     this._setStats();
   }
@@ -99,18 +75,6 @@ class SampleSell extends Component {
         <section className="buy_comp">
           <h3 className="buy_comp-title">Test Transaction</h3>
           <div className="buy_comp-form">
-            <div className="buy_comp-prices">
-              <div className="buy_comp-USD">
-                Test Balance:
-                <span className="BTCprice">${this.state.testBalance}</span>
-              </div>
-              <div className="buy_comp-BTC">
-                BTC Balance:
-                <span className="BTCprice">
-                  {this.state.testBTCBalance} BTC
-                </span>
-              </div>
-            </div>
             <div className="buy_comp-BTC">
               Buy 1 BTC for
               <span className="BTCprice">${this.state.BTC.Price}</span>
@@ -155,7 +119,7 @@ class SampleSell extends Component {
             <button
               className="buttonForwards btn btn-primary btn-lg"
               type="submit"
-              onClick={this.handleUSD}
+              onClick={this.props.pageForwards}
             >
               Purchase
               <i className="fas fa-arrow-right" />

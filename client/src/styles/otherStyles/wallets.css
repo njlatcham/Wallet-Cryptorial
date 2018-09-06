@@ -2,6 +2,11 @@
   margin-top: 50px;
 }
 
+.create-button {
+  margin-bottom: 25px;
+  width: 100%;
+}
+
 .fixer {
   float: right;
 }

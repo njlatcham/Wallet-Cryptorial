@@ -4,16 +4,16 @@ How-to on making a Cryptocurrency Wallet... Then create one for real and buy cry
 
 ## Final Product
 
-!["Screenshot of Home Page"]()
-!["Screenshot of Login Page"]()
-!["Screenshot of Tutorial Home Page"]()
-!["Screenshot of Tutorial Completion Page"]()
-!["Screenshot of Wallets Module"]()
-!["Screenshot of Wallet Creation Page"]()
-!["Screenshot of Wallets Page"]()
-!["Screenshot of Market Page"]()
-!["Screenshot of Buy Bitcoin Module"]()
-!["Screenshot of Coinbase API Module"]()
+!["Screenshot of Home Page"](https://github.com/njlatcham/Wallet-Cryptorial/blob/master/docs/Home%20Page.png)
+!["Screenshot of Register Page"](https://github.com/njlatcham/Wallet-Cryptorial/blob/master/docs/Register%20Page.png)
+!["Screenshot of Tutorial Home Page"](https://github.com/njlatcham/Wallet-Cryptorial/blob/master/docs/Tutorial%20Start%20Page.png)
+!["Screenshot of Tutorial Completion Page"](https://github.com/njlatcham/Wallet-Cryptorial/blob/master/docs/Tutorial%20Complete%20Page.png)
+!["Screenshot of Wallets Module"](https://github.com/njlatcham/Wallet-Cryptorial/blob/master/docs/New%20Wallets%20Page.png)
+!["Screenshot of Wallet Creation Page"](https://github.com/njlatcham/Wallet-Cryptorial/blob/master/docs/Create%20Keys%20Page.png)
+!["Screenshot of Wallets Page"](https://github.com/njlatcham/Wallet-Cryptorial/blob/master/docs/Wallets%20Page.png)
+!["Screenshot of Market Page"](https://github.com/njlatcham/Wallet-Cryptorial/blob/master/docs/Market%20Page.png)
+!["Screenshot of Buy Bitcoin Module"](https://github.com/njlatcham/Wallet-Cryptorial/blob/master/docs/Buy%20Bitcoin%20Page.png)
+!["Screenshot of Coinbase API Module"](https://github.com/njlatcham/Wallet-Cryptorial/blob/master/docs/Coinbase%20API%20Page.png)
 
 ## Dependencies
 Languages:HTML, CSS, and JS Database: PostgreSQL 

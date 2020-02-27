@@ -20,7 +20,7 @@ Languages:HTML, CSS, and JS Database: PostgreSQL
 Front-End Dependencies: React.js (Router, DOM, Bootstrap), JWT Decoder, Bitcoinjs-lib (BIP32, BIP39), Ethers.js, and Axios. 
 Back-End Dependencies: Node.js, Express, Sequelize, UUID, JSON Web Token, and Cors.
 
-##Getting Started
+## Getting Started
 1. Clone repository
 2. Setup a PSQL instance and define the user and database in your ENV file
 3. cd Wallet-Cryptorial/client && npm install
